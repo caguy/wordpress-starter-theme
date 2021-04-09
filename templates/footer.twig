@@ -1,0 +1,17 @@
+<footer role="footer" class="footer">
+    <nav class="container">
+        <a href="#" class="footer__back-to-top">{{__("Retour en haut", "CustomThemeName")}}</a>
+        {% if footer_menu %}
+            <ul class="footer__menu">
+                {% for item in footer_menu.items %}
+                    <li class="footer__menu-item {{item.classes|join(' ')}}">
+                        <a class="footer__menu-item-link" href="{{item.link}}">{{item.title}}</a>
+                        {% if item.children %}
+                            {% include 'menu-drop.twig' with {items: item.children, component: "footer"} %}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </nav>
+</footer>

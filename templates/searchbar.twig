@@ -1,0 +1,5 @@
+<form action="{{site.url}}" method="get">
+    <label for="search">Rechercher :</label>
+    <input type="text" name="s" id="search" value="{{function('the_search_query')}}" />
+    <input type="submit" value="{{__("Rechercher", "CustomThemeName")}}" />
+</form>

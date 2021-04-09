@@ -1,0 +1,7 @@
+{% if pagination.prev %}
+    <a href="{{pagination.prev.link}}" class="next {{pagination.prev.link|length ? '' : 'invisible'}}">Previous</a>
+{% endif %}
+
+{% if posts.pagination.next %}
+    <a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">Next</a>
+{% endif %}

@@ -1,0 +1,37 @@
+{
+  "name": "cgu/wordpress_starter_theme",
+  "description": "Starter theme for WordPress",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "timber/timber": "^1.18",
+    "wpackagist-plugin/advanced-custom-fields": "^5.9.5",
+    "wpackagist-plugin/loco-translate": "^2.5"
+  },
+  "extra": {
+    "installer-paths": {
+      "../../plugins/advanced-custom-fields": [
+        "wpackagist-plugin/advanced-custom-fields"
+      ],
+      "../../plugins/loco-translate": [
+        "wpackagist-plugin/loco-translate"
+      ]
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "CustomThemeName\\": "inc/"
+    }
+  },
+  "authors": [
+    {
+      "name": "caguy",
+      "email": "camille.guy@gmail.com"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<ul class="{{component}}__menu-drop">
+    {% for item in items %}
+        <li class="{{component}}__menu-drop-item {{item.classes|join(' ')}}">
+            <a href="{{item.link}}">{{item.title}}</a>
+            {% if item.children %}
+                {% include 'menu-drop.twig' with { items: item.children, component} %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

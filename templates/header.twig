@@ -1,0 +1,20 @@
+<header role="header" class="header">
+    <nav class="container">
+        <a href="{{site.url}}" class="header__brand">
+            {{site.name}}
+        </a>
+        {% if main_menu %}
+            <ul class="header__menu">
+                {% for item in main_menu.items %}
+                    <li class="header__menu-item {{item.classes|join(' ')}}">
+                        <a class="header__menu-item-link" href="{{item.link}}">{{item.title}}</a>
+                        {% if item.children %}
+                            {% include 'menu-drop.twig' with {items: item.children, component: "header"} %}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% include 'searchbar.twig' %}
+    </nav>
+</header>

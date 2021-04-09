@@ -1,0 +1,40 @@
+{% block html_head_container %}
+
+    {% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+    
+{% endblock %}
+
+<body class={{body_class}}>
+    {{function('wp_body_open')}}
+    <a class="skip-link sr-only sr-only-focusable" href="#content">{{ _e( 'Aller au contenu') }}</a>
+
+    {% block header %}
+        {% include 'header.twig' %}
+    {% endblock %}
+
+    <main id="content" class="container">
+        {% block content %}
+            <p>{{__("Aucun contenu trouvé", "CustomThemeName")}}</p>
+        {% endblock %}
+
+        {% include 'pagination.twig' with {pagination: posts.pagination} %}
+
+    {% if sidebar %}
+    </main>
+
+        <aside class="sidebar">
+            {{sidebar}}
+        </aside>
+
+    {% endif %}
+			
+    {% block footer %}
+        {% include 'footer.twig' %}
+        {{function('wp_footer')}}
+	</body>
+    {% endblock %}
+    
+</html>
